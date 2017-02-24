@@ -2,18 +2,18 @@
   "_args": [
     [
       {
-        "raw": "multilevel@^7.3.0",
+        "raw": "multilevel",
         "scope": null,
         "escapedName": "multilevel",
         "name": "multilevel",
-        "rawSpec": "^7.3.0",
-        "spec": ">=7.3.0 <8.0.0",
-        "type": "range"
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
       },
-      "/home/jonathan/git/S3"
+      "/home/jonathan/git/ironman/arsenal"
     ]
   ],
-  "_from": "multilevel@>=7.3.0 <8.0.0",
+  "_from": "multilevel@latest",
   "_id": "multilevel@7.3.0",
   "_inCache": true,
   "_location": "/multilevel",
@@ -25,22 +25,22 @@
   "_npmVersion": "3.3.12",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "multilevel@^7.3.0",
+    "raw": "multilevel",
     "scope": null,
     "escapedName": "multilevel",
     "name": "multilevel",
-    "rawSpec": "^7.3.0",
-    "spec": ">=7.3.0 <8.0.0",
-    "type": "range"
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
   },
   "_requiredBy": [
-    "/"
+    "#USER"
   ],
   "_resolved": "https://registry.npmjs.org/multilevel/-/multilevel-7.3.0.tgz",
   "_shasum": "76ec44c589b2fe5dd40380c89e2d7349358ed4f7",
   "_shrinkwrap": null,
-  "_spec": "multilevel@^7.3.0",
-  "_where": "/home/jonathan/git/S3",
+  "_spec": "multilevel",
+  "_where": "/home/jonathan/git/ironman/arsenal",
   "author": {
     "name": "Julian Gruber",
     "email": "julian@juliangruber.com"

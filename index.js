@@ -41,4 +41,10 @@ module.exports = {
             server: require('./lib/network/http/server'),
         },
     },
+    storage: {
+        metadata: {
+            server: require('./lib/storage/metadata/file/server'),
+            client: require('./lib/storage/metadata/file/client'),
+        },
+    },
 };
