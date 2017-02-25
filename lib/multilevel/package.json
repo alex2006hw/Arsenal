@@ -1,0 +1,123 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "multilevel@^7.3.0",
+        "scope": null,
+        "escapedName": "multilevel",
+        "name": "multilevel",
+        "rawSpec": "^7.3.0",
+        "spec": ">=7.3.0 <8.0.0",
+        "type": "range"
+      },
+      "/home/jonathan/git/S3"
+    ]
+  ],
+  "_from": "multilevel@>=7.3.0 <8.0.0",
+  "_id": "multilevel@7.3.0",
+  "_inCache": true,
+  "_location": "/multilevel",
+  "_nodeVersion": "5.1.0",
+  "_npmUser": {
+    "name": "juliangruber",
+    "email": "julian@juliangruber.com"
+  },
+  "_npmVersion": "3.3.12",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "multilevel@^7.3.0",
+    "scope": null,
+    "escapedName": "multilevel",
+    "name": "multilevel",
+    "rawSpec": "^7.3.0",
+    "spec": ">=7.3.0 <8.0.0",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/multilevel/-/multilevel-7.3.0.tgz",
+  "_shasum": "76ec44c589b2fe5dd40380c89e2d7349358ed4f7",
+  "_shrinkwrap": null,
+  "_spec": "multilevel@^7.3.0",
+  "_where": "/home/jonathan/git/S3",
+  "author": {
+    "name": "Julian Gruber",
+    "email": "julian@juliangruber.com"
+  },
+  "bugs": {
+    "url": "https://github.com/juliangruber/multilevel/issues"
+  },
+  "dependencies": {
+    "duplexer": "^0.1.1",
+    "level-manifest": "^1.2.0",
+    "mux-demux": "^3.7.9",
+    "rpc-stream": "^2.1.2",
+    "stream-combiner": "^0.2.2",
+    "tmp-stream": "^0.3.2"
+  },
+  "description": "Expose a leveldb over the network.",
+  "devDependencies": {
+    "bops": "^0.1.1",
+    "level-live-stream": "^1.4.11",
+    "level-sublevel": "^6.5.2",
+    "level-ws": "0.0.0",
+    "memdb": "^1.3.1",
+    "tape": "^4.2.2",
+    "through": "^2.3.8"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "76ec44c589b2fe5dd40380c89e2d7349358ed4f7",
+    "tarball": "https://registry.npmjs.org/multilevel/-/multilevel-7.3.0.tgz"
+  },
+  "engines": {
+    "node": ">0.6"
+  },
+  "gitHead": "b6199494d1ceb86c922a2dae7a07e082529579c3",
+  "homepage": "https://github.com/juliangruber/multilevel#readme",
+  "keywords": [
+    "levelup",
+    "leveldb",
+    "rpc",
+    "stream",
+    "server",
+    "client"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "juliangruber",
+      "email": "julian@juliangruber.com"
+    }
+  ],
+  "name": "multilevel",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/juliangruber/multilevel.git"
+  },
+  "scripts": {
+    "test": "make test",
+    "test-browser": "make test-browser"
+  },
+  "testling": {
+    "files": "test/*.js",
+    "browsers": [
+      "ie/8..latest",
+      "firefox/17..latest",
+      "firefox/nightly",
+      "chrome/22..latest",
+      "chrome/canary",
+      "opera/12..latest",
+      "opera/next",
+      "safari/5.1..latest",
+      "ipad/6.0..latest",
+      "iphone/6.0..latest",
+      "android-browser/4.2..latest"
+    ]
+  },
+  "version": "7.3.0"
+}
