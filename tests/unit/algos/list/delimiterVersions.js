@@ -8,8 +8,7 @@ const logger = new Werelogs('listTest');
 const performListing = require('../../../utils/performListing');
 const VSConst =
     require('../../../../lib/versioning/constants').VersioningConstants;
-const VER = VSConst.VERSIONING_AFFIXES.OTHER_VERSION_PREFIX;
-const SEP = VSConst.VERSIONING_AFFIXES.SEPARATOR;
+const SEP = VSConst.VersionId.Separator;
 
 class Test {
     constructor(name, input, output, filter) {
@@ -71,7 +70,7 @@ describe.skip('DelimiterVersions listing algorithm', () => {
             LatestVersions: undefined,
             NextMarker: undefined,
             NextVersionMarker: undefined,
-        }, (e, input) => e.key > VER + input.gt + SEP + VersionIdMarker),
+        }, (e, input) => e.key > input.gt + SEP + VersionIdMarker),
         new Test('with bad marker', {
             gt: 'zzzz',
             delimiter: '/',
@@ -83,7 +82,7 @@ describe.skip('DelimiterVersions listing algorithm', () => {
             LatestVersions: undefined,
             NextMarker: undefined,
             NextVersionMarker: undefined,
-        }, (e, input) => e.key > VER + input.gt + SEP + VersionIdMarker),
+        }, (e, input) => e.key > input.gt + SEP + VersionIdMarker),
         new Test('with prefix', {
             start: '/notes/summer/',
             lt: '/notes/summer0',
@@ -96,7 +95,7 @@ describe.skip('DelimiterVersions listing algorithm', () => {
             LatestVersions: undefined,
             NextMarker: undefined,
             NextVersionMarker: undefined,
-        }, (e, input) => e.key > VER + input.start && e.key < VER + input.lt),
+        }, (e, input) => e.key > input.start && e.key < input.lt),
         new Test('with bad prefix', {
             start: 'zzzy',
             lt: 'zzzz',
@@ -109,7 +108,7 @@ describe.skip('DelimiterVersions listing algorithm', () => {
             LatestVersions: undefined,
             NextMarker: undefined,
             NextVersionMarker: undefined,
-        }, (e, input) => e.key > VER + input.start && e.key < VER + input.lt),
+        }, (e, input) => e.key > input.start && e.key < input.lt),
         new Test('with makKeys', {
             maxKeys: 3,
         }, {
@@ -172,7 +171,7 @@ describe.skip('DelimiterVersions listing algorithm', () => {
             LatestVersions: undefined,
             NextMarker: undefined,
             NextVersionMarker: undefined,
-        }, (e, input) => e.key > VER + input.start && e.key < VER + input.lt),
+        }, (e, input) => e.key > input.start && e.key < input.lt),
     ];
     tests.forEach(test => {
         it(`Should list ${test.name}`, done => {

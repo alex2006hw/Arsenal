@@ -6,9 +6,6 @@ const DelimiterMaster =
 const Werelogs = require('werelogs').Logger;
 const logger = new Werelogs('listTest');
 const performListing = require('../../../utils/performListing');
-const VSConst =
-    require('../../../../index').versioning.VersioningConstants;
-const MST = VSConst.VERSIONING_AFFIXES.MASTER_VERSION_PREFIX;
 
 class Test {
     constructor(name, input, output, filter) {
@@ -41,14 +38,14 @@ describe.skip('DelimiterMaster listing algorithm', () => {
         partLocations: undefined,
     };
     const data = [
-        { key: 'A|/notes/spring/1.txt', value: '{}' },
-        { key: 'A|/notes/spring/2.txt', value: '{}' },
-        { key: 'A|/notes/spring/march/1.txt', value: '{}' },
-        { key: 'A|/notes/summer/1.txt', value: '{}' },
-        { key: 'A|/notes/summer/2.txt', value: '{}' },
-        { key: 'A|/notes/summer/august/1.txt', value: '{}' },
-        { key: 'A|/notes/year.txt', value: '{}' },
-        { key: 'A|/Pâtisserie=中文-español-English', value: '{}' },
+        { key: '/notes/spring/1.txt', value: '{}' },
+        { key: '/notes/spring/2.txt', value: '{}' },
+        { key: '/notes/spring/march/1.txt', value: '{}' },
+        { key: '/notes/summer/1.txt', value: '{}' },
+        { key: '/notes/summer/2.txt', value: '{}' },
+        { key: '/notes/summer/august/1.txt', value: '{}' },
+        { key: '/notes/year.txt', value: '{}' },
+        { key: '/Pâtisserie=中文-español-English', value: '{}' },
     ];
     const receivedData = [
         { key: '/notes/spring/1.txt', value },
@@ -80,7 +77,7 @@ describe.skip('DelimiterMaster listing algorithm', () => {
             Delimiter: '/',
             IsTruncated: false,
             NextMarker: undefined,
-        }, (e, input) => e.key > MST + input.gt),
+        }, (e, input) => e.key > input.gt),
         new Test('with bad marker', {
             gt: 'zzzz',
             delimiter: '/',
@@ -90,7 +87,7 @@ describe.skip('DelimiterMaster listing algorithm', () => {
             Delimiter: '/',
             IsTruncated: false,
             NextMarker: undefined,
-        }, (e, input) => e.key > MST + input.gt),
+        }, (e, input) => e.key > input.gt),
         new Test('with prefix', {
             start: '/notes/summer/',
             lt: '/notes/summer0',
@@ -101,7 +98,7 @@ describe.skip('DelimiterMaster listing algorithm', () => {
             Delimiter: '/',
             IsTruncated: false,
             NextMarker: undefined,
-        }, (e, input) => e.key > MST + input.start && e.key < MST + input.lt),
+        }, (e, input) => e.key > input.start && e.key < input.lt),
         new Test('with bad prefix', {
             start: 'zzzy',
             lt: 'zzzz',
@@ -112,7 +109,7 @@ describe.skip('DelimiterMaster listing algorithm', () => {
             Delimiter: '/',
             IsTruncated: false,
             NextMarker: undefined,
-        }, (e, input) => e.key > MST + input.start && e.key < MST + input.lt),
+        }, (e, input) => e.key > input.start && e.key < input.lt),
         new Test('with makKeys', {
             maxKeys: 3,
         }, {
@@ -165,7 +162,7 @@ describe.skip('DelimiterMaster listing algorithm', () => {
             Delimiter: '/',
             IsTruncated: false,
             NextMarker: undefined,
-        }, (e, input) => e.key > MST + input.start && e.key < MST + input.lt),
+        }, (e, input) => e.key > input.start && e.key < input.lt),
     ];
     tests.forEach(test => {
         it(`Should list ${test.name}`, done => {
